@@ -1,4 +1,12 @@
-# Released under MIT License
+The following folders and their contents are (C) Ivan Smirnov. You may not reuse anything therein
+without the owner's explicit permission:
+
+- `_posts/`
+- `_drafts/`
+
+All other folders and files are MIT licensed.
+
+[Lanyon](https://github.com/poole/lanyon) theme for Jekyll is MIT licensed:
 
 Copyright (c) 2014 Mark Otto.
 

@@ -12,3 +12,34 @@ i.sidebar-icon {
     color: #777;
     padding-right: 9px;
 }
+
+.container {
+    overflow: hidden;
+}
+
+
+.masthead-social {
+    float: right;
+}
+
+.masthead-title {
+    float: left;
+}
+
+@media (max-width: 48em) {
+    .masthead-title {
+        float: none;
+    }
+    .masthead-social {
+        display: none;
+    }
+}
+
+i.icon-social {
+    color: #aaa;
+    font-size: 1.1em;
+}
+
+i:hover.icon-social {
+    color: #268bd2;
+}

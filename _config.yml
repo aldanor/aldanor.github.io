@@ -17,3 +17,6 @@ author:
   name:              Ivan Smirnov
   url:               https://twitter.com/aldanor
   email:             i.s.smirnov@gmail.com
+
+apps:
+    disqus:          aldanor

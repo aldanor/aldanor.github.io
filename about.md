@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+icon: user
 ---
 
 <p class="message">

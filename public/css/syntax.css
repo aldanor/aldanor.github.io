@@ -82,8 +82,17 @@
     white-space: pre;
     overflow-x: auto;
     word-wrap: normal;
-    font-size: 13px;
+    font-size: 14px;
     font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+@media (max-width: 30em) {
+    .highlight .lineno {
+        display: none;
+    }
+    .highlight pre code {
+        font-size: 12px;
+    }
 }
 
 .css .o,

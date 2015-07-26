@@ -25,7 +25,6 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/public/css/syntax.css" />
   <link rel="stylesheet" href="{{ site.baseurl }}/public/css/lanyon.css" />
   <link rel="stylesheet" href="{{ site.baseurl }}/public/css/style.css" />
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
 
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400" />
@@ -33,6 +32,18 @@
   <!-- Favicon -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/public/favicon/apple-touch-icon-precomposed.png" />
   <link rel="shortcut icon" href="{{ site.baseurl }}/public/favicon/favicon.ico" />
+
+  <!-- FontAwesome -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+  <script>
+    (function($) {
+        var $span = $('<span class="fa" style="display:none"></span>').appendTo('body');
+        if ($span.css('fontFamily') !== 'FontAwesome' ) {
+            $('head').append('<link href="{{ site.baseurl }}/public/css/font-awesome.min.css" rel="stylesheet" />');
+        }
+        $span.remove();
+    })(jQuery);
+</script>
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml" />

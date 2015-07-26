@@ -1,0 +1,24 @@
+---
+layout: page
+title: Archive
+icon: book
+permalink: /archive/
+sitemap:
+  priority: 0.7
+  changefreq: weekly
+  lastmod: 2015-07-26 13:19:43
+---
+
+<main class="content" role="main">
+    {% for post in site.posts %}
+      {% capture month %}{{ post.date | date: '%m%Y' }}{% endcapture %}
+      {% capture nmonth %}{{ post.next.date | date: '%m%Y' }}{% endcapture %}
+        {% if month != nmonth %}
+    <hr/>
+    <h3>{{ post.date | date: '%B %Y' }}</h3>
+        {% endif %}
+      <li>
+        {% include date.html date=post.date %} &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+</main>

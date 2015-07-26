@@ -5,7 +5,7 @@ highlighter:         pygments
 markdown:            redcarpet
 
 title:               Ivan Smirnov
-tagline:             on all things tech
+tagline:             all things tech
 description:         Ivan Smirnov's Personal Blog
 url:                 http://ivansmirnov.io
 paginate:            1
@@ -27,5 +27,6 @@ social:
   linkedin:          ivsmirnov
 
 apps:
+    facebook:        928520860520689
     disqus:          aldanor
     ga:              UA-65579615-1

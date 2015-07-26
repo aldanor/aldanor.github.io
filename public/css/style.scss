@@ -16,6 +16,16 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -.025rem;
 }
 
+code, pre {
+  font-family: $mono-family;
+  font-size: 75%;
+  color: #666;
+}
+
+a code {
+  color: $link-color;
+}
+
 i.sidebar-icon {
     color: #777;
     padding-right: 9px;

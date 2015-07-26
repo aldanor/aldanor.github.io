@@ -70,13 +70,20 @@ i:hover.icon-social {
 
 .post-date {
   float: left;
+  margin-bottom: 0.25rem;
 }
 
 .post-tags {
-    margin-top: -1.4rem;
+    margin-top: -1.5rem;
     float: right;
     font-family: $mono-family;
     font-size: 13px;
+}
+
+@media (min-width: 38em) {
+  .post-tags {
+    margin-top: -1.0rem;
+  }
 }
 
 .post-tags a {
@@ -127,4 +134,14 @@ a.read-more {
 .cover-image {
   margin: 0.2rem auto;
   display: block;
+}
+
+.clear {
+  clear: both;
+}
+
+hr.hr-thin {
+  clear: both;
+  margin-bottom: 0.6rem;
+  margin-top: 0.6rem;
 }

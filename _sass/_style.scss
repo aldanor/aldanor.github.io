@@ -1,0 +1,125 @@
+$link-color: #268bd2;
+$tag-color: #888;
+$tag-bg-color: #ddd;
+$mono-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+html {
+  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -.025rem;
+}
+
+code, pre {
+  font-family: $mono-family;
+  font-size: 80%;
+  color: #795da3;
+  background-color: #f9f9f9;
+}
+
+a code {
+  color: $link-color;
+}
+
+i.sidebar-icon {
+    color: #777;
+    padding-right: 9px;
+}
+
+.container {
+    overflow: hidden;
+}
+
+.masthead-social {
+    float: right;
+}
+
+.masthead-title {
+    float: left;
+}
+
+@media (max-width: 48em) {
+    .masthead-title {
+        float: none;
+    }
+    .masthead-social {
+        display: none;
+    }
+}
+
+i.icon-social {
+    color: #aaa;
+    font-size: 1.1em;
+}
+
+i:hover.icon-social {
+    color: $link-color;
+}
+
+.post-content {
+  clear: both;
+}
+
+.tag-header {
+  font-family: $mono-family;
+  color: #9a9a9a;
+}
+
+.post-date {
+  float: left;
+}
+
+.post-tags {
+    margin-top: -1.4rem;
+    float: right;
+    font-family: $mono-family;
+    font-size: 13px;
+}
+
+.post-tags a {
+  color: #9a9a9a;
+
+  &:hover {
+    color: $link-color;
+  }
+}
+
+ul.toc {
+  clear: both;
+}
+
+.anchor {
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+
+  color: #666;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    color: #f00;
+  }
+}
+
+a.read-more {
+  color: #aaa;
+  font-size: 0.85rem;
+
+  &:hover {
+    color: $link-color;
+  }
+}

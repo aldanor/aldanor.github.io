@@ -13,7 +13,7 @@ min_related_tags:    2
 excerpt_separator:   <!--more-->
 
 sass:
-  sass_dir:          public/css
+  sass_dir:          _sass
   style:             compressed
 
 author:

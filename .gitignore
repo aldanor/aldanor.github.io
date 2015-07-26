@@ -43,3 +43,6 @@ bower_components
 
 # Drafts
 _posts/*.draft.*
+
+# SASS cache
+.sass-cache/

@@ -89,3 +89,31 @@ i:hover.icon-social {
     color: $link-color;
   }
 }
+
+ul.toc {
+  clear: both;
+}
+
+.anchor {
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+
+  color: #666;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    color: #f00;
+  }
+}

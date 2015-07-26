@@ -7,6 +7,9 @@ comments: true
   <h1 class="post-title">{{ page.title }}</h1>
   {% include post-header.html post=page %}
   <div class="post-content">
+    {% if page.cover %}
+        <img src="{{ page.cover }}" class="cover-image" />
+    {% endif %}
     {{ content }}
   </div>
 </div>

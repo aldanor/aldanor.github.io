@@ -1,4 +1,4 @@
-permalink:           pretty
+permalink:           /:title
 relative_permalinks: true
 
 highlighter:         pygments

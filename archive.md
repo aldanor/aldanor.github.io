@@ -2,6 +2,7 @@
 layout: page
 title: Archive
 icon: book
+permalink: /archive/
 ---
 
 {% for post in site.posts %}

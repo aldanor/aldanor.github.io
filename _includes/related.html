@@ -1,0 +1,41 @@
+{% assign related = false %}
+{% for post in site.posts %}
+  {% unless post.url == page.url %}
+    {% assign related_tags = 0 %}
+    {% for tag in post.tags %}
+      {% if page.tags contains tag %}
+        {% assign related_tags = related_tags | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    {% if related_tags >= site.min_related_tags %}
+      {% assign related = true %}
+    {% endif %}
+  {% endunless %}
+{% endfor %}
+
+{% if related %}
+  <div class="related">
+    <h3>Related Posts</h3>
+    <ul class="related-posts">
+      {% for post in site.posts %}
+        {% unless post.url == page.url %}
+          {% assign related_tags = 0 %}
+          {% for tag in post.tags %}
+            {% if page.tags contains tag %}
+              {% assign related_tags = related_tags | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          {% if related_tags >= site.min_related_tags %}
+            <li>
+              <h5>
+                <a href="{{ site.baseurl }}{{ post.url }}">
+                  {{ post.title }} <small>{{ post.date | date_to_string }}</small>
+                </a>
+              </h5>
+            </li>
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

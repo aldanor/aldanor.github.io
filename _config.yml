@@ -6,8 +6,10 @@ markdown:            redcarpet
 
 title:               Ivan Smirnov
 tagline:             on all things tech
+description:         Ivan Smirnov's Personal Blog
 url:                 http://ivansmirnov.io
 paginate:            1
+min_related_tags:    2
 
 sass:
   sass_dir:          _sass

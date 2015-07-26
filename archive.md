@@ -12,7 +12,6 @@ icon: book
 <h3>{{ post.date | date: '%B %Y' }}</h3>
     {% endif %}
   <li>
-    <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %d, %Y" }}</time></span> &raquo;
-    <a href="{{ post.url }}">{{ post.title }}</a>
+    {% include date.html date=post.date %} &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
   </li>
 {% endfor %}

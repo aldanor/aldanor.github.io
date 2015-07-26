@@ -3,6 +3,8 @@ relative_permalinks: true
 
 highlighter:         pygments
 markdown:            redcarpet
+redcarpet:
+  extensions:        [with_toc_data]
 
 title:               Ivan Smirnov
 tagline:             all things tech

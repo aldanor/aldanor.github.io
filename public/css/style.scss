@@ -117,3 +117,12 @@ ul.toc {
     color: #f00;
   }
 }
+
+a.read-more {
+  color: #aaa;
+  font-size: 0.85rem;
+
+  &:hover {
+    color: $link-color;
+  }
+}

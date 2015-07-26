@@ -12,7 +12,12 @@ layout: default
       </h1>
       {% include post-header.html post=post %}
       <div class="post-content">
-        {{ post.content }}
+        {{ post.excerpt }}
+        {% if post.content != post.excerpt %}
+          <a class="read-more" href="{{ site.baseurl }}{{ post.url }}">
+            Read more...
+          </a>
+        {% endif %}
       </div>
     </div>
   {% endfor %}

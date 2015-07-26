@@ -1,3 +1,11 @@
+---
+---
+
+$link-color: #268bd2;
+$tag-color: #888;
+$tag-bg-color: #ddd;
+$mono-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
 html {
   font-family: "PT Serif", Georgia, "Times New Roman", serif;
 }
@@ -16,7 +24,6 @@ i.sidebar-icon {
 .container {
     overflow: hidden;
 }
-
 
 .masthead-social {
     float: right;
@@ -41,5 +48,34 @@ i.icon-social {
 }
 
 i:hover.icon-social {
-    color: #268bd2;
+    color: $link-color;
+}
+
+.post-content {
+  display: inline-block;
+}
+
+.tag-header {
+  font-family: $mono-family;
+  color: #9a9a9a;
+}
+
+.post-date {
+  float: left;
+}
+
+.post-tags {
+    margin-top: -.5rem;
+    margin-bottom: 1rem;
+    float: right;
+    font-family: $mono-family;
+    font-size: 13px;
+}
+
+.post-tags a {
+  color: #9a9a9a;
+
+  &:hover {
+    color: $link-color;
+  }
 }

@@ -1,5 +1,7 @@
 <span class="post-date">{{ include.post.date | date_to_string }}</span>
-{% for tag in include.post.tags %}
-  <span class="post-tag"><a href="{{ site.baseurl }}/tags#{{ tag | cgi_escape }}">{{ tag }}</a></span>
-{% endfor %}
-
+<div class="post-tags">
+  {% for tag in include.post.tags %}
+    {% if forloop.first %}<br>&nbsp;{% else %}&middot;{% endif %}
+    <a href="{{ site.baseurl }}/tags#{{ tag | cgi_escape }}">{{ tag }}</a>
+  {% endfor %}
+</div>

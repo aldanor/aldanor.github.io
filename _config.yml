@@ -12,8 +12,8 @@ paginate:            1
 min_related_tags:    2
 
 sass:
-  sass_dir:          _sass
-  style:            :compressed
+  sass_dir:          public/css
+  style:             compressed
 
 author:
   name:              Ivan Smirnov

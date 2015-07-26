@@ -12,6 +12,7 @@ description:         Ivan Smirnov's Personal Blog
 url:                 http://ivansmirnov.io
 paginate:            1
 min_related_tags:    2
+excerpt_separator:   <!--more-->
 
 sass:
   sass_dir:          public/css

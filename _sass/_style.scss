@@ -25,38 +25,39 @@ a code {
 }
 
 i.sidebar-icon {
-    color: #777;
-    padding-right: 9px;
+  color: #777;
+  padding-right: 9px;
 }
 
 .container {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .masthead-social {
-    float: right;
+  float: right;
 }
 
 .masthead-title {
-    float: left;
+  float: left;
 }
 
 @media (max-width: 48em) {
-    .masthead-title {
-        float: none;
-    }
-    .masthead-social {
-        display: none;
-    }
+  .masthead-title {
+    float: none;
+  }
+
+  .masthead-social {
+    display: none;
+  }
 }
 
 i.icon-social {
-    color: #aaa;
-    font-size: 1.1em;
+  color: #aaa;
+  font-size: 1.1em;
 }
 
 i:hover.icon-social {
-    color: $link-color;
+  color: $link-color;
 }
 
 .post-content {
@@ -74,10 +75,10 @@ i:hover.icon-social {
 }
 
 .post-tags {
-    margin-top: -1.5rem;
-    float: right;
-    font-family: $mono-family;
-    font-size: 13px;
+  margin-top: -1.5rem;
+  float: right;
+  font-family: $mono-family;
+  font-size: 13px;
 }
 
 @media (min-width: 38em) {

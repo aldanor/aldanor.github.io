@@ -5,7 +5,7 @@ highlighter:         pygments
 markdown:            kramdown
 
 title:               Ivan Smirnov
-tagline:             all things tech
+tagline:             on all things tech and then some
 description:         Ivan Smirnov's Personal Blog
 url:                 http://ivansmirnov.io
 paginate:            1

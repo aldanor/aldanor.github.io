@@ -46,3 +46,7 @@ _posts/*.draft.*
 
 # SASS cache
 .sass-cache/
+
+# IPython notebooks
+*.ipynb
+*.ipynb-checkpoint

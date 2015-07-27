@@ -1,6 +1,7 @@
 /* github.css for Pygments */
 .highlight {
-    .hll { background-color: #ffffcc }
+    // background-color: #ffffcc;
+
     .c { color: #999988; font-style: italic } /* Comment */
     .err { color: #a61717; background-color: #e3d2d2 } /* Error */
     .k { color: #000000; font-weight: bold } /* Keyword */
@@ -73,35 +74,6 @@
     .n, .o, .p { color: #333333; font-weight: normal}
 }
 
-/* lighten the line numbers and make them unselectable */
-.highlight .lineno {
-    color: rgba(0, 0, 0, 0.20);
-    display: inline-block;
-    padding: 0 5px;
-    padding-right: 10px;
-    border-right: 1px solid #ddd;
-    margin-right: 5px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-}
-
-.highlight pre {
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding-top: 0.7rem;
-    padding-bottom: 0.7rem;
-
-    code {
-        display: block;
-        white-space: pre;
-        overflow-x: auto;
-        word-wrap: normal;
-        font-size: 14px;
-        font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-    }
-}
-
 /* reduce code font size and remove linenos on smaller screens */
 @media (max-width: 37.99em) {
     .highlight .lineno {
@@ -109,6 +81,95 @@
     }
     .highlight pre code {
         font-size: 11px;
+    }
+}
+
+$code-vpad: 14px;
+$code-hpad: 20px;
+
+.highlight pre {
+    counter-reset: line-numbering;
+    border: solid 1px #ddd;
+    border-radius: 6px;
+    padding: 0;
+    margin-bottom: 30px;
+    white-space: pre;
+    overflow-x: auto;
+    word-break: inherit;
+    word-wrap: inherit;
+    background-color: #fdfdfd;
+    font-size: 14px;
+    line-height: 20px;
+
+    code {
+        background-color: #fdfdfd;
+        font-size: 14px;
+        font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+        word-wrap: normal;
+        overflow-x: auto;
+        white-space: pre;
+    }
+
+    a:first-of-type::before {
+      padding-top: $code-vpad;
+    }
+
+    a:last-of-type::before {
+      padding-bottom: $code-vpad;
+    }
+
+    a:only-of-type::before {
+      padding: $code-vpad;
+    }
+
+    a::before {
+      content: counter(line-numbering);
+      border-right: 1px solid #e8e8e8;
+      counter-increment: line-numbering;
+      padding-right: 1em;
+      width: 24px;
+      text-align: right;
+      display: inline-block;
+      color: rgba(0, 0, 0, 0.20);
+      background: #f8f8f8;
+      margin-right: 18px;
+      padding: 0 7px;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+}
+
+.highlight.nolinenos pre a::before {
+    display: none;
+}
+
+.highlight.nolinenos pre {
+    padding: $code-vpad $code-hpad;
+}
+
+/* reduce code font size and remove linenos on smaller screens */
+@media (max-width: 37.99em) {
+    .highlight pre a::before {
+        display: none;
+    }
+
+    .highlight pre {
+        padding: 0.5*$code-vpad 0.5*$code-hpad;
+        font-size: 11px;
+        line-height: 15px;
+    }
+
+    .highlight.nolinenos pre {
+        padding: 0.5*$code-vpad 0.5*$code-hpad;
+    }
+
+    .highlight pre code {
+        font-size: 11px;
+        line-height: 15px;
     }
 }
 

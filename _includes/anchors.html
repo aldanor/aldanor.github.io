@@ -1,6 +1,12 @@
 <script>
     $(document).ready(function (e) {
-        anchors.options.placement = 'left';
-        anchors.add('h2, h3, h4, h5, h6');
+        anchors.options.placement = 'right';
+        anchors.add(
+            '.post-content h2',
+            '.post-content h3',
+            '.post-content h4',
+            '.post-content h5',
+            '.post-content h6'
+        );
     });
 </script>

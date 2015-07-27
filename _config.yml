@@ -6,7 +6,7 @@ markdown:            kramdown
 
 title:               Ivan Smirnov
 tagline:             on all things tech and then some
-description:         Ivan Smirnov's Personal Blog
+description:         on all things tech and then some
 url:                 http://ivansmirnov.io
 paginate:            1
 min_related_tags:    2

@@ -1,14 +1,16 @@
 $link-color: #268bd2;
 $tag-color: #888;
 $tag-bg-color: #ddd;
+$serif-family: "PT Serif", Georgia, "Times New Roman", serif;
+$sans-family: "PT Sans", Helvetica, Arial, sans-serif;
 $mono-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 
 html {
-  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  font-family: $serif-family;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: $sans-family;
   font-weight: 400;
   letter-spacing: -.025rem;
 }
@@ -81,13 +83,13 @@ i:hover.icon-social {
 .post-tags {
   margin-top: -1.5rem;
   float: right;
-  font-family: $mono-family;
-  font-size: 13px;
+  font-family: $sans-family;
+  font-size: 14px;
 }
 
 @media (min-width: 38em) {
   .post-tags {
-    margin-top: -1.0rem;
+    margin-top: -1.1rem;
   }
 }
 

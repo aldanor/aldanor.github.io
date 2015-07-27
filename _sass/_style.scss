@@ -145,3 +145,9 @@ hr.hr-thin {
   margin-bottom: 0.6rem;
   margin-top: 0.6rem;
 }
+
+@media (min-width: 48.01em) {
+  .sidebar-toggle {
+    position: fixed;
+  }
+}

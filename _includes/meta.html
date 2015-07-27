@@ -14,10 +14,12 @@
 {% if page.description %}
   <meta property="og:description" content="{{ page.description }}" />
 {% else %}
-  <meta property="og:description" content="{{ site.description }}" />
+  <meta property="og:description" content="{{ site.tagline }}" />
 {% endif %}
 {% if page.url %}
   <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+{% else %}
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}" />
 {% endif %}
 {% if page.date %}
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />

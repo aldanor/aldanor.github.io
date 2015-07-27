@@ -41,6 +41,10 @@ i.sidebar-icon {
   float: left;
 }
 
+h3.masthead-title > small {
+  color: rgba(0, 0, 0, 0.35);
+}
+
 @media (max-width: 48em) {
   .masthead-title {
     float: none;

@@ -22,8 +22,8 @@ in my bedroom studio producing strange and obscure sounds.
 
 ### Social
 
-[<i class="fa fa-twitter"></i> http://twitter.com/aldanor]()
+[<i class="fa fa-github"></i> http://github.com/aldanor](http://github.com/aldanor)
 
-[<i class="fa fa-github"></i> http://github.com/aldanor]()
+[<i class="fa fa-twitter"></i> http://twitter.com/aldanor](http://twitter.com/aldanor)
 
 You may also find me in other corners of the Internet under the handle *aldanor*.

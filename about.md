@@ -8,7 +8,7 @@ permalink: /about/
 My name is Ivan Smirnov. I'm a quant and a programmer interested in scientific computing,
 data science, web technologies and anything nerdy in general.
 
-I'm current located in Dublin, Ireland where I work as a quantitative researcher for
+I currently live in Dublin, Ireland where I work as a quantitative researcher for
 [Susquehanna](http://www.sig.com). Aside from that I do some open source development and I
 spend a good portion of my free time hacking on various [side projects](https://github.com/aldanor), mostly in Python and Rust as of recent.
 
@@ -18,8 +18,8 @@ Math Finance in [University of Alberta](http://ualberta.ca), Canada and I got my
 before joining SIG.
 
 I'm also a musician with a bit of classical piano training and deep passion for both jazz
-and electronic music. Whenever I'm not hacking or running, I'm most likely to be found
-in my bedroom studio producing strange and obscure sounds.
+and electronic music. Whenever I'm not hacking, running or practicing some Lindy hop, I'm most
+likely to be found in my bedroom studio producing strange and obscure sounds.
 
 ### Social
 

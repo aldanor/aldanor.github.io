@@ -158,3 +158,11 @@ hr.hr-thin {
     position: fixed;
   }
 }
+
+a.top-tagline {
+  color: rgba(0, 0, 0, 0.35);
+
+  &:hover, &:active, &:visited {
+    color: rgba(0, 0, 0, 0.35);
+  }
+}

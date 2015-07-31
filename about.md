@@ -24,8 +24,6 @@ in my bedroom studio producing strange and obscure sounds.
 
 [<i class="fa fa-twitter"></i> http://twitter.com/aldanor]()
 
-[<i class="fa fa-github"></i> http://github/aldanor]()
-
-<!-- You can find me on [Twitter](http://twitter.com/aldanor) or [GitHub](http://github.com/aldanor). -->
+[<i class="fa fa-github"></i> http://github.com/aldanor]()
 
 You may also find me in other corners of the Internet under the handle *aldanor*.

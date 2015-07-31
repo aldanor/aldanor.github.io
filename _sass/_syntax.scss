@@ -147,7 +147,7 @@ $code-hpad: 20px;
     }
 }
 
-.highlight.nolinenos pre {
+.highlight.nln pre {
   padding: $code-vpad $code-hpad;
 
   a::before {
@@ -172,7 +172,7 @@ $code-hpad: 20px;
     }
   }
 
-  .highlight.nolinenos pre {
+  .highlight.nln pre {
     padding: 0.5*$code-vpad 0.5*$code-hpad;
   }
 }

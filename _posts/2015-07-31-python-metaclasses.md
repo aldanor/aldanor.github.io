@@ -400,7 +400,7 @@ sufficient – we need to override `__call__` instead. An easy way to remember t
 `__new__` is triggered when a *new* class is created; `__call__` is triggered when a new
 instance is created via the *call*-like syntax on the class object. This works the same way as
 when `__new__` and `__call__` magic methods are implemented on normal classes, with the former
-controlling instance creation and the latter makeing instances callable.
+controlling instance creation and the latter making instances callable.
 
 To see how these methods work together, take a look at the following snippet:
 

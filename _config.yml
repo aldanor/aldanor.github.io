@@ -3,6 +3,9 @@ relative_permalinks: true
 
 highlighter:         pygments
 markdown:            kramdown
+pygments:            true
+pygments_options:
+- lineanchors
 
 title:               Ivan Smirnov
 tagline:             on all things tech and then some

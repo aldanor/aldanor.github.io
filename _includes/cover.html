@@ -1,0 +1,6 @@
+{% if page.cover_img %}
+    {% if page.cover_url %}<a href="{{ page.cover_url }}">{% endif %}
+    <img src="{{ page.cover_img }}" class="cover-image" />
+    {% if page.cover_url %}</a>{% endif %}
+    <hr class="hr-thin" />
+{% endif %}

@@ -7,7 +7,8 @@ description: |
 tags:
 - python
 - meta
-cover: http://imgs.xkcd.com/comics/meta-analysis.png
+cover_img: http://imgs.xkcd.com/comics/meta-analysis.png
+cover_url: https://xkcd.com/1447
 ---
 
 

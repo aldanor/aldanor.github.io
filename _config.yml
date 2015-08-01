@@ -3,8 +3,6 @@ relative_permalinks: true
 
 highlighter:         pygments
 markdown:            kramdown
-kramdown:
-  input:             GFM
 
 title:               Ivan Smirnov
 tagline:             on all things tech and then some

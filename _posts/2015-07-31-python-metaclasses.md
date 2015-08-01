@@ -36,7 +36,7 @@ top. For instance, the type of `1` is `int` and the type of `int` is `type`:
 
 {:.nln}
 
-{% highlight python lineanchors %}
+{% highlight python lineanchors=line %}
 assert type(1) is int
 assert type(int) is type
 {% endhighlight %}

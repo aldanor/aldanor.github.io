@@ -35,9 +35,7 @@ In Python, everything is an object and every object needs to have a *type*. In a
 a type is an entity that knows how to create instances, with optional bells and whistles on
 top. For instance, the type of `1` is `int` and the type of `int` is `type`:
 
-{:.nln}
-
-{% highlight python lineanchors=line %}
+{% highlight python %}
 assert type(1) is int
 assert type(int) is type
 {% endhighlight %}
@@ -47,9 +45,7 @@ that provides a few functions that manipulate types and defines the standard typ
 the interpreter. This comes in handy, say, if you need to check whether a given object is
 a function or a module:
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 import types
 
 def func():
@@ -62,17 +58,13 @@ assert isinstance(types, types.ModuleType)
 Now, since `type` is also an object, what about its type? It turns out that `type`'s type is the
 `type` itself, so that's as far up the type ladder as it goes:
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 assert type(type) is type
 {% endhighlight %}
 
 The type of all new-style user-defined classes is also `type`:
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 class A(object):
     pass
 
@@ -82,9 +74,7 @@ assert type(A) is type
 You sort of get that for free in Python 3, but in Python 2 you have to remember to derive all
 your classes from `object`, otherwise they end up being of `classobj` type:
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 # Python 2.x
 class B:
     pass
@@ -97,9 +87,7 @@ Finally, when called with three arguments, `type` acts like a constructor, so yo
 new types in an inline fashion. The arguments are: the name of the type, the tuple of base
 classes and the class dict (which contains everything you would normally put in the class body):
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 class A(object):
     pass
 
@@ -122,9 +110,7 @@ We'll get back to this a bit later when we look at the metaclass constructor.
 Since all metaclasses inherit from `type`, the simplest implementation of a metaclass
 looks like this:
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 class M(type):
     pass
 {% endhighlight %}
@@ -137,9 +123,7 @@ thing that's done differently in Python 2 and Python 3.
 
 In Python 2, the metaclass is attached by setting a special field in the class body:
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 # Python 2.x only
 class A(object):
     __metaclass__ = M
@@ -148,9 +132,7 @@ class A(object):
 In Python 3, however, the metaclass has to be specified as a keyword argument in the base
 class list:
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 # Python 3.x only
 class A(object, metaclass=M):
     pass
@@ -160,9 +142,7 @@ One of the ways to get around this is to use the [`six`](https://pypi.python.org
 compatibility library which provides a unified way of attaching metaclasses either through
 a decorator or a special base class:
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 # Python 2 and 3
 import six
 
@@ -192,18 +172,14 @@ assert type(C) is M
 
 As we've already seen above, `type`'s constructor signature looks like this:
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 type(name, bases, clsdict)
 {% endhighlight %}
 
 Defining classes using the `class` keyword can be just viewed as a syntactic sugar for
 calling `type`'s constructor directly (for the most part, anyway).
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 class A(object):
     x = 1
 
@@ -220,9 +196,7 @@ class B(A):
 
 By using `type` directly, the example above could be rewritten like so:
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 clsdict_a = {
     'x': 1
 }
@@ -253,7 +227,9 @@ Let's look at a specific example where we want all subclasses of a certain class
 automatically incremented ids only if the `track` field is set to a truthy value in the class
 body.
 
-{% highlight python lineanchors %}
+{:.line-numbers}
+
+{% highlight python %}
 import six
 
 class Meta(type):
@@ -316,7 +292,9 @@ are available as class methods and can be accessed by both classes and instances
 One of the typical use cases for metaclasses is to keep track of the created classes in
 order to be able to access them at runtime by name or identifier.
 
-{% highlight python lineanchors %}
+{:.line-numbers}
+
+{% highlight python %}
 import six
 
 class RegistryMeta(type):
@@ -372,9 +350,7 @@ type knows how to attach that fancy functionality to the object at creation time
 
 To summarize the type/metaclass hierarchy in the example above:
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 a = A()
 assert type(a) is A
 assert type(A) is Registry
@@ -405,7 +381,9 @@ controlling instance creation and the latter making instances callable.
 
 To see how these methods work together, take a look at the following snippet:
 
-{% highlight python lineanchors %}
+{:.line-numbers}
+
+{% highlight python %}
 from __future__ import print_function
 import six
 
@@ -440,9 +418,7 @@ instance('bar', y=2)
 
 The output looks like this:
 
-{:.nln}
-
-{% highlight console lineanchors %}
+{% highlight console %}
 metaclass::new
 ---
 metaclass::call ('foo',) {'x': 1}
@@ -457,7 +433,9 @@ the instance constructor and return the existing instance which can be stored in
 itself. If this instance doesn't exist yet, we can create it by calling `super` which in its
 turn will call the class constructor if it's defined.
 
-{% highlight python lineanchors %}
+{:.line-numbers}
+
+{% highlight python %}
 import six
 
 class Singleton(type):
@@ -500,7 +478,9 @@ is any object that implements at least one of the following methods: `__get__`, 
 Descriptors control attribute access, and the default behaviour is to get, set or
 delete an attribute from object's dictionary. Here's a naïve implementation:
 
-{% highlight python lineanchors %}
+{:.line-numbers}
+
+{% highlight python %}
 class Descriptor(object):
     def __init__(self, name):
         self.name = name
@@ -545,9 +525,7 @@ want to.
 In the next example, we will implement a base class whose subclasses can use special syntax
 to generate typed attributes with default values. Given a class that is defined like so:
 
-{:.nln}
-
-{% highlight python lineanchors %}
+{% highlight python %}
 class A(Typed):
     x = int
     y = str, 'foo'
@@ -559,7 +537,9 @@ the given values to `int` and `str`, respectively.
 
 Here is one possible implementation.
 
-{% highlight python lineanchors %}
+{:.line-numbers}
+
+{% highlight python %}
 import six
 
 class Descriptor(object):

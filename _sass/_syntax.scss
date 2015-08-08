@@ -1,6 +1,4 @@
 $code-bg-color: #fdfdfd;
-$code-vpad: 14px;
-$code-hpad: 20px;
 
 /* github.css for Pygments */
 .highlight {
@@ -70,7 +68,7 @@ $code-hpad: 20px;
 
 .css .o, .css .o + .nt, .css .nt + .nt { color: #999; }
 
-/* match the recent GitHub stylesheet */
+/* match the most recent GitHub stylesheet */
 .highlight {
   .nd, .nf, .nc { color: #795da3; font-weight: normal }
   .kn, .k, .ow { color: #a71d5d; font-weight: normal }
@@ -78,16 +76,6 @@ $code-hpad: 20px;
   .bp { color: #ed6a43; font-weight: normal }
   .s { color: #183691; font-weight: normal }
   .n, .o, .p { color: #333333; font-weight: normal}
-}
-
-/* reduce code font size and remove linenos on smaller screens */
-@media (max-width: 37.99em) {
-    .highlight .lineno {
-        display: none;
-    }
-    .highlight pre code {
-        font-size: 11px;
-    }
 }
 
 .highlight pre {
@@ -103,7 +91,7 @@ $code-hpad: 20px;
     background-color: $code-bg-color;
     font-size: 14px;
     line-height: 20px;
-    padding: 0;
+    padding: 10px 20px;
 
     code {
         background-color: $code-bg-color;
@@ -114,55 +102,55 @@ $code-hpad: 20px;
         white-space: pre;
     }
 
-    a:first-of-type::before {
-      padding-top: $code-vpad;
+    &.line-numbers {
+      position: relative;
+      padding-left: 3.8em;
+      counter-reset: linenumber;
+
+      & > code {
+        position: relative;
+      }
+
+      .line-numbers-rows {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        font-size: 100%;
+        left: -3.8em;
+        width: 3em; /* works for line-numbers below 1000 lines */
+        letter-spacing: -1px;
+        border-right: 1px solid #ccc;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        & > span {
+          pointer-events: none;
+          display: block;
+          counter-increment: linenumber;
+        }
+
+        & > span:before {
+          content: counter(linenumber);
+          color: rgba(0, 0, 0, 0.25);
+          display: block;
+          padding-right: 0.8em;
+          text-align: right;
+        }
+      }
     }
-
-    a:last-of-type::before {
-      padding-bottom: $code-vpad;
-    }
-
-    a:only-of-type::before {
-      padding: $code-vpad;
-    }
-
-    a::before {
-      content: counter(line-numbering);
-      border-right: 1px solid #e8e8e8;
-      counter-increment: line-numbering;
-      padding-right: 1em;
-      width: 24px;
-      text-align: right;
-      display: inline-block;
-      color: rgba(0, 0, 0, 0.15);
-      background: #f6f6f6;
-      margin-right: 18px;
-      padding: 0 7px;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-}
-
-.highlight.nln pre {
-  padding: $code-vpad $code-hpad;
-
-  a::before {
-    display: none;
-  }
 }
 
 /* reduce code font size and remove linenos on smaller screens */
 @media (max-width: 37.99em) {
   .highlight pre {
-    padding: 0.5*$code-vpad 0.5*$code-hpad;
     font-size: 11px;
     line-height: 15px;
+    padding: 10px 10px !important;
 
-    a::before {
+    .line-numbers-rows {
       display: none;
     }
 
@@ -170,9 +158,5 @@ $code-hpad: 20px;
       font-size: 11px;
       line-height: 15px;
     }
-  }
-
-  .highlight.nln pre {
-    padding: 0.5*$code-vpad 0.5*$code-hpad;
   }
 }

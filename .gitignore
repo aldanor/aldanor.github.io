@@ -50,3 +50,4 @@ _posts/*.draft.*
 # IPython notebooks
 *.ipynb
 *.ipynb-checkpoint
+Gemfile.lock

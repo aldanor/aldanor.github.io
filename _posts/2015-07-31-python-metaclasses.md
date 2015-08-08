@@ -11,7 +11,6 @@ cover_img: http://imgs.xkcd.com/comics/meta-analysis.png
 cover_url: https://xkcd.com/1447
 ---
 
-
 Same way as classes control instance creation and let us define instance behaviour in
 the form of instance methods and magic methods, *metaclasses* in Python can do all that
 and a little more for class objects. The simplest way to deal with metaclasses is to

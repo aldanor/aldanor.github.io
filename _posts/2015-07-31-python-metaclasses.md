@@ -39,6 +39,7 @@ top. For instance, the type of `1` is `int` and the type of `int` is `type`:
 assert type(1) is int
 assert type(int) is type
 {% endhighlight %}
+{:.line-numbers}
 
 There's the [`types`](https://docs.python.org/3/library/types.html) module in the standard library
 that provides a few functions that manipulate types and defines the standard types used by

@@ -3,6 +3,8 @@ relative_permalinks: true
 
 highlighter:         pygments
 markdown:            kramdown
+kramdown:
+  enable_coderay:    false
 
 title:               Ivan Smirnov
 tagline:             on all things tech and then some
@@ -11,6 +13,9 @@ url:                 http://ivansmirnov.io
 paginate:            1
 min_related_tags:    2
 excerpt_separator:   <!--more-->
+
+safe:                true
+lsi:                 false
 
 sass:
   sass_dir:          _sass

@@ -224,8 +224,8 @@ after the class definition was parsed by interpreter and right before it gets pa
 This can be done by overriding the `__new__` method.
 
 Let's look at a specific example where we want all subclasses of a certain class to be assigned
-automatically incremented ids only if the `track` field is set to a truthy value in the class
-body.
+automatically incremented `id` numbers only if the `track` field is set to true in the class
+body; we also want to store all tracked classes in a shared class-level `classes` field.
 
 {:.line-numbers}
 
@@ -233,59 +233,65 @@ body.
 import six
 
 class Meta(type):
-    _counter = 0
+    classes = []
 
     def __new__(meta, name, bases, clsdict):
         clsdict['id'] = None
-        if clsdict.pop('track', False):
-            clsdict['id'] = meta._counter
-            meta._counter += 1
-        return super(Meta, meta).__new__(meta, name, bases, clsdict)
+        track = clsdict.pop('track', False)
+        clsdict['id'] = len(meta.classes) if track else None
+        cls = super(Meta, meta).__new__(meta, name, bases, clsdict)
+        if track:
+            meta.classes.append(cls)
+        return cls
 
-class Trackable(six.with_metaclass(Meta)):
+@six.add_metaclass(Meta)
+class Trackable(object):
     pass
 
-assert Trackable._counter == 0
-assert M._counter == 0
+assert Trackable.classes == []
+assert Meta.classes == []
 assert Trackable.id is None
 
 class A(Trackable):
     track = True
 
-assert A._counter == 1
 assert A.id == 0
+assert A.classes == Trackable.classes == [A]
 assert not hasattr(A, 'track')
 
 class B(A):
     pass
 
-assert B._counter == 1
+assert B.classes == A.classes == [A]
 assert B.id is None
 
 class C(Trackable):
     track = True
 
-assert C._counter == 2
+assert C.classes == B.classes == [A, C]
 assert C.id == 1
+assert Trackable.classes[C.id] is C
 {% endhighlight %}
 
 First we define the metaclass `Meta` as a subclass of `type` that overrides its `__new__`
-method and contains a class-level variable `_counter` that encapsulates the state.
+method and contains a class-level variable `classes` that encapsulates the current state.
 
-The signature of `__new__` matches the signature of the `type` constructor, and it receives the
-class name, a tuple of base types and a class dict. In this method, we check if the class dict
-has a `track` field and whether it's set to a truthy value; if it does, we assign the current
-counter value to a class-level `id` field and increase the counter, otherwise the `id` is set
-to `None`. Note that the `track` key is removed from the class dict if it exists.
+The signature of `__new__` method matches the signature of `type`'s constructor -- it
+receives the class name, a tuple of base types and a class dict, and it must return a
+fully instantiated type. In this method, we check if the class dict has a `track` field
+set to a true value and assign a class-level `id` accordingly if it does; elsewise, it
+is set to `None`.
 
-Finally, we call the the constructor of the base metaclass to instantiate the type and then we
-return it (note that we could have used `type.__new__` instead of `super(Meta, meta).__new__`
+Finally, we call the the constructor of the base metaclass to instantiate the type,
+optionally store it in the list of tracked classes, and then return it. It's worth
+mentioning that we could have used `type.__new__` instead of `super(Meta, meta).__new__`
 but it's generally considered a good habit to avoid hard-coding the base type which may
-sometimes lead to unexpected inheritance behaviour).
+sometimes lead to unexpected inheritance behaviour.
 
-Note that all the class-level variables in the metaclass such as `_counter` in our case can be
-accessed by the underlying classes and instances. Same way, instance methods of the metaclass
-are available as class methods and can be accessed by both classes and instances.
+Note that all the class-level variables in the metaclass such as `classes` in the
+example above can also be accessed by the underlying classes and instances. Same way,
+instance methods of the metaclass
+are available as class methods in both classes and instances.
 
 ## Metaclass as a registry
 

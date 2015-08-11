@@ -1,8 +1,20 @@
-<span class="post-date">{{ include.post.date | date_to_string }}</span>
+<span class="post-date">
+  {{ include.post.date | date_to_string }}
+</span>
+
 <div class="post-tags">
   {% for tag in include.post.tags %}
     {% if forloop.first %}<br>&nbsp;{% else %}&middot;{% endif %}
     <a href="{{ site.baseurl }}/tags#{{ tag | cgi_escape }}">{{ tag }}</a>
   {% endfor %}
+
+  {% if include.post.hn %}
+    <span class="hn-link">
+      &middot;
+      <a href="https://news.ycombinator.com/item?id={{ include.post.hn }}">
+        <i class="fa fa-hacker-news"></i>
+      </a>
+    </span>
+  {% endif %}
 </div>
 <hr class="hr-thin" />

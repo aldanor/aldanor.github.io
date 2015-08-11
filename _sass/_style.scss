@@ -166,3 +166,20 @@ a.top-tagline {
     color: rgba(0, 0, 0, 0.35);
   }
 }
+
+.hn-link {
+  color: #9a9a9a;
+  i {
+    color: #9a9a9a;
+  }
+  a:hover i {
+    &:before {
+      content: 'Discuss on Hacker News';
+      font-family: $sans-family;
+      font-size: 12px;
+      color: $link-color;
+      text-decoration: underline;
+      font-weight: normal;
+    }
+  }
+}

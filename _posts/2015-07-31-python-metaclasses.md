@@ -9,6 +9,7 @@ tags:
 - meta
 cover_img: http://imgs.xkcd.com/comics/meta-analysis.png
 cover_url: https://xkcd.com/1447
+hn: 10027116
 ---
 
 Same way as classes control instance creation and let us define instance behaviour in

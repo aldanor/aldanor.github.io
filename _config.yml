@@ -9,7 +9,8 @@ kramdown:
 title:               Ivan Smirnov
 tagline:             on all things tech and then some
 description:         on all things tech and then some
-url:                 http://ivansmirnov.io
+# url:                 http://ivansmirnov.io
+url:                 http://aldanor.github.io
 paginate:            1
 min_related_tags:    2
 excerpt_separator:   <!--more-->
@@ -23,7 +24,8 @@ sass:
 
 author:
   name:              Ivan Smirnov
-  url:               http://ivansmirnov.io
+#   url:               http://ivansmirnov.io
+  url:               http://github.com/aldanor
   email:             i.s.smirnov@gmail.com
 
 social:

@@ -1,5 +1,5 @@
 permalink:           /:title
-relative_permalinks: true
+# relative_permalinks: true
 
 highlighter:         pygments
 markdown:            kramdown
